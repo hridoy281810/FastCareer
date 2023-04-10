@@ -1,4 +1,6 @@
 import React from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 
 const Statistics = () => {
     const assignmentData =[
@@ -14,7 +16,7 @@ const Statistics = () => {
         },
         {
             id: "3b46s",
-            name: "legal-solution-resources",
+            name: "legal solution",
             mark: 60
         },
         {
@@ -34,7 +36,7 @@ const Statistics = () => {
         },
         {
             id: "7g59s",
-            name: "Make Quiz Hero a great quiz",
+            name: "Make Quiz Hero",
             mark: 60
         },
         {
@@ -47,10 +49,23 @@ const Statistics = () => {
         
     }
     return (
-        <div>
-            <h1>Statistics
-</h1>
-        </div>
+        <>
+        <div className='bg-gray-100 md:py-24'>
+     <h2 className='text-center text-4xl font-bold '>Job Details</h2>
+     </div>
+     <div className='my-container'>
+    <AreaChart
+     width={1280}
+     height={700}
+     data={assignmentData}
+    >
+         <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="mark" stroke="blue" fill="#CCCCFF" />
+    </AreaChart>
+     </div>
+        </>
     );
 };
 
