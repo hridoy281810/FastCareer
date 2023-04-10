@@ -1,5 +1,5 @@
 import React from 'react';
-
+import iconImg from '../../assets/Icons/Group 9969.png'
 const Footer = () => {
     return (
         <div className='bg-black'>
@@ -8,11 +8,8 @@ const Footer = () => {
         <div className='text-white'>
             <h2 className='text-2xl font-bold mb-4'>CareerHub</h2>
             <p className='text-gray-300 mb-3'>There are many variations of passages of Lorem Ipsum , but the majority have suffered alteration in some form.</p>
-            <div className='flex gap-4'>
-                <div className='rounded-full bg-white h-14 w-14'></div>
-                <div className='rounded-full bg-white h-14 w-14'></div>
-                <div className='rounded-full bg-white h-14 w-14'></div>
-            </div>
+         
+                <img src={iconImg} alt="" />
         </div>
         <div className=''>
      <h3 className='text-xl text-white font-bold mb-4'>Company</h3>

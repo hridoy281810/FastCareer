@@ -5,11 +5,12 @@ import { useLoaderData } from 'react-router-dom';
 import Category from '../Category/Category';
 import JobFeature from '../JobFeature/JobFeature';
 const Home = () => {
-    const feature = useLoaderData()
-    const featured  = feature.slice(0,4)
     const [categories,setCategories] =  useState([])
-    // console.log(feature)
-    // console.log(featured)
+    const featured = useLoaderData()
+    const [visible,setVisible] = useState(4)
+    const handleSeeAllJobs = ()=>{
+        setVisible((previousData => previousData + 2))
+    }
     useEffect(()=>{
         fetch('jCategory.json')
         .then(res => res.json())
@@ -49,11 +50,11 @@ const Home = () => {
        <p className='text-center mt-4 text-gray-500'>Explore thousands of job opportunities with all the information you need. Its your future</p>
        <div className='grid md:grid-cols-2 gap-10 mt-10'>
        {
-        featured.map(feature => <JobFeature key={feature.id} feature={feature}></JobFeature>)
+        featured.slice(0,visible).map(feature => <JobFeature key={feature.id} feature={feature}></JobFeature>)
        }
        </div>
       <div className=' flex justify-center items-center mt-8'>
-      <button className='btn btn-t'>Show more</button>
+      <button onClick={handleSeeAllJobs} className='btn btn-t'>Show more</button>
       </div>
        </div>
      </>
