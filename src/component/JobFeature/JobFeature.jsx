@@ -1,5 +1,6 @@
 import React from 'react';
 import './JobFeature.css'
+import { Link } from 'react-router-dom';
 
 const JobFeature = ({feature}) => {
 const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = feature;
@@ -18,7 +19,7 @@ const {company,title,companyLogoUrl,description,educationalRequirements,email,ex
             <div className='mb-5'>
             <span className='text-xl text-gray-500 '>{location}</span> <span className='text-xl text-gray-500'>Salary: {salary}</span>
             </div>
-            <button className='font-medium md:mb-0  px-3 py-1.5 md:px-6 md:py-2 m-2 text-lg  text-white btn'>View Details</button>
+    <Link to={`jobdetails/${id}`}> <button className='font-medium md:mb-0  px-3 py-1.5 md:px-6 md:py-2 m-2 text-lg  text-white btn'>View Details</button></Link>
             </div>
             
         </div>

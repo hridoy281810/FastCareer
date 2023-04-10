@@ -23,11 +23,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader:()=> fetch(`jCategory.json`)
+        loader:()=> fetch(`featuredJob.json`)
       },
       {
-        path:'/jobdetails',
-        element: <JobDetails></JobDetails>
+        path:'jobdetails/:id',
+        element: <JobDetails></JobDetails>,
+        loader:async ({params})=> {
+          const jobDetails = await fetch(`featuredJob.json`)
+          const jsonJobDetails = await jobDetails.json()
+          const singleJobDetails = jsonJobDetails.find(jb => jb.id == params.id)
+          return singleJobDetails;
+        }
       },
       {
         path:'/statistics',

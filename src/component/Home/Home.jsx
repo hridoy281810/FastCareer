@@ -5,19 +5,15 @@ import { useLoaderData } from 'react-router-dom';
 import Category from '../Category/Category';
 import JobFeature from '../JobFeature/JobFeature';
 const Home = () => {
-    const categories = useLoaderData()
-    // console.log(categories)
-    const [feature,setFeatured] =  useState([])
-
-   
-        const featured  = feature.slice(0,4)
-  
+    const feature = useLoaderData()
+    const featured  = feature.slice(0,4)
+    const [categories,setCategories] =  useState([])
     // console.log(feature)
     // console.log(featured)
     useEffect(()=>{
-        fetch('featuredJob.json')
+        fetch('jCategory.json')
         .then(res => res.json())
-        .then(data => setFeatured(data))
+        .then(data => setCategories(data))
     },[])
     
    
