@@ -51,7 +51,7 @@ const Statistics = () => {
     return (
         <>
         <div className='bg-gray-100 md:py-24'>
-     <h2 className='text-center text-4xl font-bold '>Job Details</h2>
+     <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
      </div>
      <div className='my-container'>
     <AreaChart

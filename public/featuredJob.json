@@ -17,7 +17,7 @@
       "phone": "+1 (123) 456-7890",
       "email": "jobs@xyzcorp.com",
       "jobType": "Full Time",   
-       "jobSide" : "Onsite"
+       "jobSide" : "Remote"
     },
     {
       "id": 2,
@@ -57,7 +57,7 @@
       "phone": "+1 (234) 567-8901",
       "email": "jobs@abccorp.com",
       "jobType": "Half Time",
-      "jobSide" : "Onsite"
+      "jobSide" : "Remote"
     },
     {
       "id": 4,
@@ -110,6 +110,6 @@
   "phone": "+1 (345) 678-9012",
   "email": "jobs@techinnovators.com",
   "jobType": "Full Time",
-  "jobSide" : "Remote"
+  "jobSide" : "Onsite"
 }
    ]

@@ -1,13 +1,47 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { CurrencyDollarIcon ,CalendarDaysIcon,PhoneIcon,EnvelopeIcon,MapPinIcon} from '@heroicons/react/24/solid'
+import { addToDb, getStoredCart } from '../../Utilitis/fakedb';
+import { CartContext, ProductContext } from '../Layout/Layout';
 
 const JobDetails = () => {
   const jobs = useLoaderData()
-  console.log(jobs)
-  const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
+  // const products = useContext(ProductContext || [])
 
-  console.log(jobs)
+  const [cart,setCart] = useContext(CartContext || [])
+  const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
+  
+  // useEffect(()=>{
+  //   const saveJob = getStoredCart();
+  //   const saveCart = [];
+  //   for(const id in saveJob){
+  //     const newJob = products.find(jb => jb.id === id)
+  //     if(newJob){
+  //       const quantity = saveJob[id]
+  //       newJob.quantity = quantity
+  //       saveCart.push(newJob)
+  //     }
+  //   }
+    
+  //   setCart(saveCart)
+  // },[products])
+  
+  const handleApply = (jobs) =>{
+    let newCart = [];
+    const exists = cart.find(pd => pd.id === jobs.id)
+    if(!exists){
+      newCart = [...cart, jobs]
+    }
+    else{
+      const remaining = cart.filter(pd => pd.id !== jobs.id);
+      newCart = [...remaining,exists];
+    }
+    setCart(newCart)
+    addToDb(jobs.id)
+    return  alert('jhiuhuih')
+    
+  }
+
     return (
       <>
     
@@ -55,7 +89,8 @@ const JobDetails = () => {
 </div>
     </div>
 
-     <button className='btn btn-t w-full  '>Apply Now</button>
+
+     <button onClick={()=> handleApply(jobs)} className='btn btn-t w-full'>Apply Now</button>
       </div>
           </div>
           </div>

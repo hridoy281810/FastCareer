@@ -1,0 +1,11 @@
+.img-bg{
+    
+    width: 240px;
+    height: 240px;
+    background: #F4F4F4;
+    border-radius: 8px;
+}
+.img-bg img{
+    height: 50px;
+    width: 150px;
+}

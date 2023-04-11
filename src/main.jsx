@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import './index.css'
 import {
   createBrowserRouter,
@@ -13,17 +12,19 @@ import AppliedJobs from './component/AppliedJobs/AppliedJobs';
 import Blog from './component/Blog/Blog';
 import Error from './component/ErrorPage/Error';
 import JobDetails from './component/JobDetails/JobDetails';
+import { productsAndCartData } from './component/Loader/Loader';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Layout></Layout>,
     errorElement: <Error></Error>,
+    loader:productsAndCartData,
     children:[
       {
         path: '/',
         element: <Home></Home>,
-        loader:()=> fetch(`featuredJob.json`)
+        loader: ()=>fetch(`featuredJob.json`)
       },
       {
         path:'jobdetails/:id',
@@ -36,12 +37,12 @@ const router = createBrowserRouter([
         }
       },
       {
-        path:'/statistics',
-        element: <Statistics></Statistics>
+        path:'/appliedjobs',
+        element: <AppliedJobs></AppliedJobs>,
       },
       {
-        path:'/appliedjobs',
-        element: <AppliedJobs></AppliedJobs>
+        path:'/statistics',
+        element: <Statistics></Statistics>
       },
       {
         path:'/blog',
