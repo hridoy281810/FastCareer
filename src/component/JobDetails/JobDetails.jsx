@@ -3,28 +3,28 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { CurrencyDollarIcon ,CalendarDaysIcon,PhoneIcon,EnvelopeIcon,MapPinIcon} from '@heroicons/react/24/solid'
 import { addToDb, getStoredCart } from '../../Utilitis/fakedb';
 import { CartContext, ProductContext } from '../Layout/Layout';
+import { ToastContainer, toast } from 'react-toastify';
 
 const JobDetails = () => {
   const jobs = useLoaderData()
-  // const products = useContext(ProductContext || [])
+  const products = useContext(ProductContext || [])
 
   const [cart,setCart] = useContext(CartContext || [])
   const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
   
-  // useEffect(()=>{
-  //   const saveJob = getStoredCart();
-  //   const saveCart = [];
-  //   for(const id in saveJob){
-  //     const newJob = products.find(jb => jb.id === id)
-  //     if(newJob){
-  //       const quantity = saveJob[id]
-  //       newJob.quantity = quantity
-  //       saveCart.push(newJob)
-  //     }
-  //   }
+  useEffect(()=>{
+    const saveJob = getStoredCart();
+    const saveCart = [];
+    for(const id in saveJob){
+      const newJob = products.find(jb => jb.id === id)
+      if(newJob){
+    saveCart[id] = 1
+        saveCart.push(newJob)
+      }
+    }
     
-  //   setCart(saveCart)
-  // },[products])
+    setCart(saveCart)
+  },[products])
   
   const handleApply = (jobs) =>{
     let newCart = [];
@@ -38,8 +38,9 @@ const JobDetails = () => {
     }
     setCart(newCart)
     addToDb(jobs.id)
-    return  alert('jhiuhuih')
-    
+    return   toast.success('Success Apply 👍', {
+      position: toast.POSITION.TOP_CENTER
+  }); 
   }
 
     return (
@@ -94,6 +95,7 @@ const JobDetails = () => {
       </div>
           </div>
           </div>
+          <ToastContainer />
       </>
       
     );

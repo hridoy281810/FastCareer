@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '../Header/Header';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Footer from '../Footer/Footer';
