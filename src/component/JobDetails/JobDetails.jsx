@@ -15,7 +15,7 @@ const JobDetails = () => {
   const [cart,setCart] = useContext(CartContext || [])
   
 
-  const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
+  const {title,description,educationalRequirements,email,experiences,location,phone,responsibilities,salary} = jobs;
   
   const handleApply = (jobs) =>{
     let newCart = [];

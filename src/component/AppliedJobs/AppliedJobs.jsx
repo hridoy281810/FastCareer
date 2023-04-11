@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import SaveInfo from '../SaveInfo/SaveInfo';
 import { getStoredCart } from '../../Utilitis/fakedb';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const AppliedJobs = () => {
+ const navigation = useNavigation();
+ if(navigation.state === 'loading'){
+  return <LoadingSpinner />
+}
+ 
   const jobs = useLoaderData()
     const [cart,setCart] = useState([])
     useEffect(()=>{
