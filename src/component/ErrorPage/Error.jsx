@@ -14,10 +14,11 @@ const Error = () => {
                     <h2 className='mb-8 font-extrabold text-9xl text-gray-900'>
                         <span className='sr-only'>Error</span> {status || 404}
                     </h2>
+                    <p className='text-red-600 text-xl font-bold'>আপনি খুবই চালাক ব্যক্তি উল্টাপালটা জায়গায় ক্লিক মারেন !!!</p>
                     <div>
                     <p className='text-2xl font-semibold md:text-3xl mb-8'>
                         {error?.message}</p>
-                   <Link  className='btn btn-t'>Back To Home</Link>
+                   <Link to={'/'} className='btn btn-t'>Back To Home</Link>
                        
                     </div>
                 </div>

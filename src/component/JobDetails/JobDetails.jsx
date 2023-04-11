@@ -7,24 +7,24 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const JobDetails = () => {
   const jobs = useLoaderData()
-  const products = useContext(ProductContext || [])
+  // const products = useContext(ProductContext || [])
 
   const [cart,setCart] = useContext(CartContext || [])
   const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
   
-  useEffect(()=>{
-    const saveJob = getStoredCart();
-    const saveCart = [];
-    for(const id in saveJob){
-      const newJob = products.find(jb => jb.id === id)
-      if(newJob){
-    saveCart[id] = 1
-        saveCart.push(newJob)
-      }
-    }
+  // useEffect(()=>{
+  //   const saveJob = getStoredCart();
+  //   const saveCart = [];
+  //   for(const id in saveJob){
+  //     const newJob = products.find(jb => jb.id === id)
+  //     if(newJob){
+  //   saveCart[id] = 1
+  //       saveCart.push(newJob)
+  //     }
+  //   }
     
-    setCart(saveCart)
-  },[products])
+  //   setCart(saveCart)
+  // },[products])
   
   const handleApply = (jobs) =>{
     let newCart = [];
