@@ -13,7 +13,6 @@ import Blog from './component/Blog/Blog';
 import Error from './component/ErrorPage/Error';
 import JobDetails from './component/JobDetails/JobDetails';
 import { productsAndCartData } from './component/Loader/Loader';
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,13 +23,13 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=>fetch(`featuredJob.json`)
+        loader: ()=>fetch(`/featuredJob.json`)
       },
       {
         path:'jobdetails/:id',
         element: <JobDetails></JobDetails>,
         loader:async ({params})=> {
-          const jobDetails = await fetch(`featuredJob.json`)
+          const jobDetails = await fetch(`/featuredJob.json`)
           const jsonJobDetails = await jobDetails.json()
           const singleJobDetails = jsonJobDetails.find(jb => jb.id == params.id)
           return singleJobDetails;
@@ -39,6 +38,7 @@ const router = createBrowserRouter([
       {
         path:'/appliedjobs',
         element: <AppliedJobs></AppliedJobs>,
+        loader: ()=>fetch(`/featuredJob.json`)
       },
       {
         path:'/statistics',

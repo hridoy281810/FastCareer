@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Square3Stack3DIcon} from '@heroicons/react/24/solid'
+
 import './Header.css'
 
 const Header = () => {
@@ -13,12 +15,12 @@ const Header = () => {
           aria-label='HeroGadget'
           title='HeroGadget'
         >
-          
-          <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 '>
-          MyPortfolio
+          <span className='ml-2 text-2xl font-bold tracking-wide text-gray-800  inline-flex justify-center items-center gap-1'>
+          <Square3Stack3DIcon className='h-9 w-9 text-blue-500' />
+             FastCareer
           </span>
         </Link>
-        <ul className='items-center hidden space-x-8 lg:flex'>
+        <ul className='items-center hidden space-x-8 lg:flex font-bold text-gray-500'>
           <li>
             <NavLink
               to='/'
@@ -49,7 +51,7 @@ const Header = () => {
               Applied Jobs
             </NavLink>
           </li>
-          <li>
+          <li className=''>
             <NavLink
               to='/blog'
               aria-label='Blog'
@@ -92,9 +94,10 @@ const Header = () => {
                       to='/'
                       aria-label='MyPortfolio'
                       title='MyPortfolio'
-                    > <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                      MyPortfolio
-                      </span>
+                    >  <span className='ml-2 text-2xl font-bold tracking-wide text-gray-800  inline-flex justify-center items-center gap-1'>
+                    <Square3Stack3DIcon className='h-9 w-9 text-blue-500' />
+                       FastCareer
+                    </span>
                     </Link>
                   </div>
                   <div>
@@ -120,7 +123,7 @@ const Header = () => {
                         to='/'
                         aria-label='Home'
                         title='Home'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                        className='font-bold  tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                       >
                        Home
                       </Link>
@@ -130,7 +133,7 @@ const Header = () => {
                         to='/statistics'
                         aria-label='Statistics'
                         title='Statistics'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                        className='font-bold  tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                       >
                        Statistics
                       </Link>
@@ -141,7 +144,7 @@ const Header = () => {
                         to='/appliedjobs'
                         aria-label='Applied Jobs'
                         title='Applied Jobs'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                        className='font-bold  tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                       >Applied Jobs
                       </Link>
                     </li>
@@ -150,7 +153,7 @@ const Header = () => {
                         to='/blog'
                         aria-label='Blog'
                         title='Blog'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                        className='font-bold  tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                       > Blog
                       </Link>
                     </li>

@@ -1,4 +1,4 @@
-import {  addToDb, getStoredCart } from "../../Utilitis/fakedb";
+import {  getStoredCart } from "../../Utilitis/fakedb";
 
 // // const loadedInformation = await fetch(`featuredJob.json`);
 // const applyJObsInformationLoader = async ()=>{
@@ -28,7 +28,7 @@ import {  addToDb, getStoredCart } from "../../Utilitis/fakedb";
 // export default applyJObsInformationLoader ;
 
 export const productsAndCartData = async () => {
-  const productsData = await fetch('featuredJob.json')
+  const productsData = await fetch('/featuredJob.json')
   const products = await productsData.json()
 
   const savedCart = getStoredCart()

@@ -1,30 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import {  useLoaderData, useNavigation } from 'react-router-dom';
 import { CurrencyDollarIcon ,CalendarDaysIcon,PhoneIcon,EnvelopeIcon,MapPinIcon} from '@heroicons/react/24/solid'
-import { addToDb, getStoredCart } from '../../Utilitis/fakedb';
-import { CartContext, ProductContext } from '../Layout/Layout';
+import { addToDb} from '../../Utilitis/fakedb';
+import { CartContext} from '../Layout/Layout';
 import { ToastContainer, toast } from 'react-toastify';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const JobDetails = () => {
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+      return <LoadingSpinner />
+  }
   const jobs = useLoaderData()
-  // const products = useContext(ProductContext || [])
-
   const [cart,setCart] = useContext(CartContext || [])
-  const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
   
-  // useEffect(()=>{
-  //   const saveJob = getStoredCart();
-  //   const saveCart = [];
-  //   for(const id in saveJob){
-  //     const newJob = products.find(jb => jb.id === id)
-  //     if(newJob){
-  //   saveCart[id] = 1
-  //       saveCart.push(newJob)
-  //     }
-  //   }
-    
-  //   setCart(saveCart)
-  // },[products])
+
+  const {company,title,companyLogoUrl,description,educationalRequirements,email,experiences,id,jobSide,jobType,location,phone,responsibilities,salary} = jobs;
   
   const handleApply = (jobs) =>{
     let newCart = [];

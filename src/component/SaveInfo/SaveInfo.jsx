@@ -13,7 +13,7 @@ const SaveInfo = ({info}) => {
           <div className='p-10 rounded shadow-md md:flex gap-12 items-center border border-gray-300'>
           <div className='img-bg flex justify-center items-center'> <img className=' mb-8' src={companyLogoUrl} alt="companyLogoUrl" /></div>
           
-       <div className='md:flex justify-between items-center md:gap-x-64 '>
+       <div className='md:flex justify-between items-center md:gap-x-60 '>
        <div>
            <h2 className='text-2xl font-bold' >{title}</h2>
            <h3 className='text-xl text-gray-500 mb-4'>{company}</h3>
@@ -30,8 +30,8 @@ const SaveInfo = ({info}) => {
             </div> 
              </div>
            </div>
-   <div>
-   <Link   to='/'>  <button className='font-medium md:mb-0  px-3 py-1.5 md:px-6 md:py-2 m-2 text-lg  text-white btn'>View Details</button></Link>
+   <div className='ms-auto '>
+   <Link   to='/'>  <button className='font-medium  px-3 py-1.5 md:px-6 md:py-2 m-2 text-lg  text-white btn'>View Details</button></Link>
           
    </div>
         

@@ -1,14 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SaveInfo from '../SaveInfo/SaveInfo';
-import { CartContext } from '../Layout/Layout';
+import { getStoredCart } from '../../Utilitis/fakedb';
 
 const AppliedJobs = () => {
-    const [cart,setCart] = useContext(CartContext || [])
+  const jobs = useLoaderData()
+    const [cart,setCart] = useState([])
+    useEffect(()=>{
+      const saveJob = getStoredCart();
+      const saveCart = [];
+      console.log(saveJob)
+      for(const id in saveJob){
+        const newJob = jobs.find(jb => jb.id === parseInt(id))
+        if(newJob){
+          saveCart.push(newJob)
+        }
+      }
+      setCart(saveCart)
+    },[jobs])
+
     const handleRemoteJobs = ()=>{
      const remote = cart.filter(rm => rm.jobSide === "Remote")
    setCart(remote)
     }
+
     const handleOnsiteJobs = ()=>{
      const onsite = cart.filter(rm => rm.jobSide === "Onsite")
    setCart(onsite)
@@ -29,8 +44,7 @@ const AppliedJobs = () => {
     cart.map(info => <SaveInfo key={info.id} info={info}></SaveInfo>)
    }
   </div>
-  </div>
-           
+  </div>     
         </>
     );
 };
