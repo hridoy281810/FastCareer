@@ -1,8 +1,8 @@
 @media screen and (max-width:576px) {
 
   .footer-r {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
   }
 
 }
@@ -10,8 +10,8 @@
 @media screen and (max-width:876px) {
 
   .footer-r {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid ;
+    grid-template-columns: repeat(2, 1fr) ;
   }
 
 }

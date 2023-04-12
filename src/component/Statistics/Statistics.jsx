@@ -1,6 +1,6 @@
 import React from 'react';
 import './Statistics.css'
-import { AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 const Statistics = () => {
     const assignmentData = [
         {
@@ -53,7 +53,7 @@ const Statistics = () => {
                 <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
             </div>
             <div className='my-container'>
-                <AreaChart className=''
+                <AreaChart 
                     width={1280}
                     height={700}
                     data={assignmentData}
@@ -63,6 +63,7 @@ const Statistics = () => {
                     <Tooltip />
                     <Area type="monotone" dataKey="mark" stroke="blue" fill="#CCCCFF" />
                 </AreaChart>
+            
             </div>
         </>
     );
