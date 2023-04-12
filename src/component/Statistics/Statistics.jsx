@@ -53,9 +53,9 @@ const Statistics = () => {
                 <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
             </div>
             <div className='my-container'>
+                <div style={{maxWidth:'1250px', height:'400px', width:'100%' }}>
+              <ResponsiveContainer width='100%' height='100%'>
                 <AreaChart 
-                    width={1280}
-                    height={700}
                     data={assignmentData}
                 >
                     <XAxis dataKey="name" />
@@ -63,7 +63,8 @@ const Statistics = () => {
                     <Tooltip />
                     <Area type="monotone" dataKey="mark" stroke="blue" fill="#CCCCFF" />
                 </AreaChart>
-            
+                </ResponsiveContainer>
+                </div>
             </div>
         </>
     );
