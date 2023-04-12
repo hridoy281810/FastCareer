@@ -1,4 +1,4 @@
-import React, { useContext,  useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Home.css'
 import img from '../../assets/All Images/P3OLGJ1 copy 1.png'
 import { useNavigation } from 'react-router-dom';
@@ -8,17 +8,17 @@ import { ProductContext } from '../Layout/Layout';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 const Home = () => {
     const navigation = useNavigation();
-    if(navigation.state === 'loading'){
+    if (navigation.state === 'loading') {
         return <LoadingSpinner />
     }
-  const products = useContext(ProductContext || [])
+    const products = useContext(ProductContext || [])
 
     const [visible, setVisible] = useState(4)
     function handleSeeAllJobs() {
         setVisible((previousData => previousData + 2));
         console.log(previousData)
     }
-  
+
     return (
         <>
             <div className='bg-gray-100'>
@@ -38,7 +38,7 @@ const Home = () => {
                 <p className='text-center mt-4 text-gray-500'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='grid md:grid-cols-4 gap-10 mt-10'>
                     {
-                        products.slice(0,4).map(category => <Category key={category.id}
+                        products.slice(0, 4).map(category => <Category key={category.id}
                             category={category}
                         >
                         </Category>)
@@ -54,9 +54,7 @@ const Home = () => {
                     }
                 </div>
                 <div className=' flex justify-center items-center mt-8'>
-
-               <button onClick={handleSeeAllJobs} className={`btn btn-t ${visible === 4 ? 'visible  ': 'hidden'}`}> See All Jobs </button>
-                     
+                    <button onClick={handleSeeAllJobs} className={`btn btn-t ${visible === 4 ? 'visible  ' : 'hidden'}`}> See All Jobs </button>
                 </div>
             </div>
         </>

@@ -1,10 +1,8 @@
 import React from 'react';
 import './Statistics.css'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-
+import { AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
 const Statistics = () => {
-    const assignmentData =[
+    const assignmentData = [
         {
             id: "1c45s",
             name: "new year new me",
@@ -45,27 +43,27 @@ const Statistics = () => {
             name: "Knowledge cafe",
             mark: 60
         }
-    ] 
+    ]
     {
-        
+
     }
     return (
         <>
-        <div className='bg-gray-100 md:py-24'>
-     <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
-     </div>
-     <div className='my-container '>
-    <AreaChart className=''
-     width={1280}
-     height={700}
-     data={assignmentData}
-    >
-         <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey="mark" stroke="blue" fill="#CCCCFF" />
-    </AreaChart>
-     </div>
+            <div className='bg-gray-100 md:py-24'>
+                <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
+            </div>
+            <div className='my-container'>
+                <AreaChart className=''
+                    width={1280}
+                    height={700}
+                    data={assignmentData}
+                >
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="mark" stroke="blue" fill="#CCCCFF" />
+                </AreaChart>
+            </div>
         </>
     );
 };
