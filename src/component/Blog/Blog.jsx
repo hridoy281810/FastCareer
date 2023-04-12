@@ -22,9 +22,9 @@ const Blog = () => {
   <p className='text-xl text-gray-500'> <span className='font-bold'>Answer:</span> UseRef is a process of React, This allows us to take a reference to the element and perform some operations based on it. This is typically used inside the Class component. </p>
   </div>
   <div className='bg-gray-100 p-6 rounded shadow-md mb-8'>
-    <p className='text-2xl text-blue-700 font-bold font-sans mb-2 '>Question: What is UseMenu?</p>
+    <p className='text-2xl text-blue-700 font-bold font-sans mb-2 '>Question: What is UseMemo?</p>
   <p className='text-xl text-gray-500'> <span className='font-bold'>Answer:</span> 
-  Use menu is React's hook by which we can perform some computation based on a component's input and memorize it so we can cache it without returning to the compose station from the time the component is rendered. This reduces performance overhead and This is a very useful process in project creation by speeding up the rendering time of components </p>
+  Use memo is React's hook by which we can perform some computation based on a component's input and memorize it so we can cache it without returning to the compose station from the time the component is rendered. This reduces performance overhead and This is a very useful process in project creation by speeding up the rendering time of components </p>
   </div>
     </div>
      </div>
