@@ -1,4 +1,5 @@
 import React from 'react';
+import './Statistics.css'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
@@ -53,8 +54,8 @@ const Statistics = () => {
         <div className='bg-gray-100 md:py-24'>
      <h2 className='text-center text-4xl font-bold '>Assignment Result Statistics </h2>
      </div>
-     <div className='my-container'>
-    <AreaChart
+     <div className='my-container '>
+    <AreaChart className=''
      width={1280}
      height={700}
      data={assignmentData}

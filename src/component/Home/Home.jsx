@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,  useState } from 'react';
 import './Home.css'
 import img from '../../assets/All Images/P3OLGJ1 copy 1.png'
 import { useNavigation } from 'react-router-dom';
@@ -12,11 +12,11 @@ const Home = () => {
         return <LoadingSpinner />
     }
   const products = useContext(ProductContext || [])
-  console.log(products.length)
-    const [visible, setVisible] = useState(4)
 
+    const [visible, setVisible] = useState(4)
     function handleSeeAllJobs() {
         setVisible((previousData => previousData + 2));
+        console.log(previousData)
     }
   
     return (
@@ -54,7 +54,8 @@ const Home = () => {
                     }
                 </div>
                 <div className=' flex justify-center items-center mt-8'>
-                <button onClick={handleSeeAllJobs} className='btn btn-t '>Show more</button>
+
+               <button onClick={handleSeeAllJobs} className={`btn btn-t ${visible === 4 ? 'visible  ': 'hidden'}`}> See All Jobs </button>
                      
                 </div>
             </div>

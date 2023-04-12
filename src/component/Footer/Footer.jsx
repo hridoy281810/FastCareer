@@ -1,10 +1,11 @@
 import React from 'react';
 import iconImg from '../../assets/Icons/Group 9969.png'
+import './footer.css'
 const Footer = () => {
     return (
         <div className='bg-black'>
             <footer className='my-container '>
-         <section className='grid md:grid-cols-5 gap-10 mb-10 '>
+         <section className='grid md:grid-cols-5 gap-10 mb-10 footer-r'>
         <div className='text-white'>
             <h2 className='text-2xl font-bold mb-4'>CareerHub</h2>
             <p className='text-gray-300 mb-3'>There are many variations of passages of Lorem Ipsum , but the majority have suffered alteration in some form.</p>

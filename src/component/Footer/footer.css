@@ -1,0 +1,19 @@
+
+
+@media screen and ( max-width:576px) {
+
+    .footer-r{
+      display: grid !important;
+      grid-template-columns: repeat(3,1fr) !important;
+    }
+    
+    }
+
+@media screen and (max-width:876px) {
+
+    .footer-r{
+      display: grid !important;
+      grid-template-columns: repeat(3,1fr) !important;
+    }
+    
+    }

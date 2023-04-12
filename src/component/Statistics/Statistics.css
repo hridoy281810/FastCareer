@@ -1,0 +1,16 @@
+
+.area1{
+    width: 1280px;
+}
+.area .area1{
+    width: 400px !important;
+    height: 300px;
+}
+@media screen and (max-width:576px) {
+
+.area .area1{
+    width: 400px !important;
+    height: 300px;
+}
+
+}

@@ -10,7 +10,7 @@ const {company,title,companyLogoUrl,description,educationalRequirements,email,ex
     return (
    
          <div className='mt-10'>
-            <div className='p-10 rounded shadow-md '>
+            <div className='p-10 rounded shadow-md border border-gray-200'>
            <img className='logo-img mb-8' src={companyLogoUrl} alt="companyLogoUrl" />
            <h2 className='text-2xl font-bold' >{title}</h2>
            <h3 className='text-xl text-gray-500 mb-4'>{company}</h3>
